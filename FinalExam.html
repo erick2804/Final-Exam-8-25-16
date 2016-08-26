@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Final Exam</title>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+ </head>
+  <body>
+  
+<!-- Adding the ng-app declaration to initialize AngularJS -->
+<div id="main" ng-app>
+	<!-- The navigation menu will get the value of the "active" variable as a class.
+		 The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+
+	<nav class="{{active}}" ng-click="$event.preventDefault()">
+
+		<!-- When a link in the menu is clicked, we set the active variable -->
+
+		<a href="#" class="Name" ng-click="active='name'">Name</a>
+		<a href="#" class="Email" ng-click="active='email'">Email</a>
+		<a href="#" class="Address" ng-click="active='address'">Address</a>
+		<a href="#" class="Phone" ng-click="active='phone'">Phone</a>
+		<a href="#" class="Class" ng-click="active='class'">Class</a>
+		<a href="#" class="Age" ng-click="active='age'">Age</a>
+	</nav>
+
+	<!-- ng-show will show an element if the value in the quotes is truthful,
+		 while ng-hide does the opposite. Because the active variable is not set
+		 initially, this will cause the first paragraph to be visible. -->
+
+	<p ng-hide="active">Please click a menu item</p>
+	<p ng-show="active">You chose <b>{{active}}</b></p>
+	
+
+</div>
+</body>
+</html>
